@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # ログインセッション(まだ使わない)1
+  # ログインセッション(まだ使わない)
   get 'mypage', to: 'users#me'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # 掲示板サイトパス
   root 'boards#index'
   get 'new_create', to: 'boards#new'
+  post 'boards', to: 'boards#create'
+  get 'boards/:id', to: 'boards#show'
+  
   resources :users, only: %i[new create]
   resources :boards
 end

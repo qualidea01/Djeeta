@@ -23,11 +23,14 @@
 		</tr>
 	</thead>
 	<tbody>
-	<tr>
-		<th>1</th>
-		<th>雑談掲示板</th>
-		<th>2020年 1月18日</th>
-		<th>1</th>
-	</tr>
+		<% @boards.each do |board| %>
+			<tr>
+				<th><%= board.id %></th>
+				<th><%= board.title %></th>
+				<th><%= board.name %></th>
+				<th><%= board.created_at.to_s(:datetime_jp) %></th>
+				<th><%= board.updated_at.to_s(:datetime_jp) %></th>
+			</tr>
+		<% end %>
 	</tbody>
 </table>
