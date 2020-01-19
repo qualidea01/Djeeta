@@ -5,28 +5,40 @@
 				掲示板作成
 			</h1>
 		</div>
-	</div>
 	</section>
-	<div class="buttons has-addons is-right" padding-top:10px>								<button class="button">掲示板一覧へ</button>
+	<div class="buttons has-addons is-right">
+		<button class="button">
+			<%= link_to '掲示板一覧へ戻る', root_path %>
+		</button>
 	</div>
-
-	<div class="field">
-		<label class="label">名前</label>
-		<div class="control">
-			<input class="input" type="text" placeholder="名前を入力してください">
-		</div>
-	</div>
-	<div class="field">
-		<label class="label">タイトル</label>
-		<div class="control">
-			<input class="input" type="text" placeholder="タイトルを入力してください">
-		</div>
-	</div>
-	<div class="field">
-		<label class="label">本文</label>
-		<div class="control">
-			<textarea class="textarea is-medium" placeholder="本文を入力してください"></textarea>
-		</div>	
-	</div>
-	
+	<%= form_for @board do |f| %>
+		<form>
+			<div class="field">
+				<label class="label">
+					<%= f.label :name, '名前' %>
+				</label>
+				<div class="control">
+					<%= f.text_field :name, class: 'input', placeholder: '名前を入力してください' %>
+				</div>
+			<div class="field">
+				<label class="label">
+					<%= f.label :title, 'タイトル' %>
+				</label>
+				<div class="control">
+					<%= f.text_field :title, class: 'input', placeholder: 'タイトルを入力してください' %>
+				</div>
+			</div>
+			<div class="field">
+				<label class="label">
+					<%= f.label :body, '本文' %>
+				</label>
+				<div class="control">
+					<%= f.text_area :body, class: 'textarea is-medium', placeholder: '本文を入力してください' %>
+				</div>
+			</div>
+			<div class="buttons has-addons is-center">
+				<%= f.submit '保存', class: "button is-info" %>
+			</div> 
+		</form>
+	<% end %>
 </div>
