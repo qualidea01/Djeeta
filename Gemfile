@@ -49,7 +49,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'solargraph'
   gem 'pry-byebug'
-  
+  gem "bulma-rails", "~> 0.4.2"
 end
 
 group :test do

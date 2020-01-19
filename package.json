@@ -1,7 +1,14 @@
 {
   "name": "Djeeta",
   "private": true,
-  "dependencies": {
-    "bulma": "^0.8.0"
+  "dependencies": {},
+  "devDependencies": {
+    "bulma": "^0.8.0",
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url app/assets/stylesheets/mystyles.scss app/assets/stylesheets/application.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
   }
 }
