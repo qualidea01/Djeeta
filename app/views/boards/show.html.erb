@@ -1,0 +1,33 @@
+<div class="buttons has-addons is-right">
+  <button class="button is-right">
+    <%= link_to '掲示板一覧' , boards_path%>  
+  </button>
+</div>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= @board.title %>
+    </p>
+		<div class="media">
+			<div class="media-left">
+				<p class="title is-5">
+        <br>
+					<%= @board.name %>
+				</p>
+			</div>
+		</div>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <%= simple_format(@board.body) %>
+      <br>
+      <%= @board.created_at.to_s(:datetime_jp) %>
+    </div>
+
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item"><%= link_to '編集', edit_board_path(@board) %></p>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+</div>

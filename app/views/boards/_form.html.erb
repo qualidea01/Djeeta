@@ -1,0 +1,30 @@
+<%= form_for @board do |f| %>
+	<form>
+			<div class="field">
+				<label class="label">
+					<%= f.label :name, '名前' %>
+				</label>
+				<div class="control">
+					<%= f.text_field :name, class: 'input', placeholder: '名前を入力してください' %>
+				</div>
+			<div class="field">
+				<label class="label">
+					<%= f.label :title, 'タイトル' %>
+				</label>
+				<div class="control">
+					<%= f.text_field :title, class: 'input', placeholder: 'タイトルを入力してください' %>
+				</div>
+			</div>
+			<div class="field">
+				<label class="label">
+					<%= f.label :body, '本文' %>
+				</label>
+				<div class="control">
+					<%= f.text_area :body, class: 'textarea is-medium', placeholder: '本文を入力してください' %>
+				</div>
+			</div>
+			<div class="buttons has-addons is-center">
+				<%= f.submit '保存', class: "button is-info" %>
+			</div> 
+		</form>
+<% end %>

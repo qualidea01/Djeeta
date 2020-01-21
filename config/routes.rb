@@ -6,10 +6,7 @@ Rails.application.routes.draw do
 
   # 掲示板サイトパス
   root 'boards#index'
-  get 'new_create', to: 'boards#new'
-  post 'boards', to: 'boards#create'
-  get 'boards/:id', to: 'boards#show'
   
   resources :users, only: %i[new create]
-  resources :boards
+  resources :boards, only: [:index, :new, :create, :show, :edit, :update]
 end
