@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root 'boards#index'
   
   resources :users, only: %i[new create]
-  resources :boards, only: [:index, :new, :create, :show, :edit, :update]
+  resources :boards
 end

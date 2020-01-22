@@ -21,6 +21,7 @@
 			<th>作成日時</th>
 			<th>更新日時</th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,10 +32,19 @@
 				<td><%= board.name %></td>
 				<td><%= board.created_at.to_s(:datetime_jp) %></td>
 				<td><%= board.updated_at.to_s(:datetime_jp) %></td>
-				<td><button class="button is-link is-light">
-					<%= link_to '詳細', board %>
-				</button></td>
+				<td>
+					<button class="button is-link is-light">
+						<%= link_to '詳細', board %>
+					</button>
+				</td>
+				<td>
+					<button class="button is-link is-light">
+						<%= link_to '削除', board, method: :delete %>
+					</button>
+				</td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
+
+<%= paginate @boards %>
