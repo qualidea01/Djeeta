@@ -53,6 +53,7 @@ group :development do
   gem 'solargraph'
   gem 'pry-byebug'
   gem "bulma-rails", "~> 0.4.2"
+  gem 'annotate'
 end
 
 group :test do
