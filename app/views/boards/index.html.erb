@@ -12,6 +12,14 @@
 	</button>
 </div>
 
+<% if flash[:notice] %>
+	<div>
+		<div class="notification is-danger">
+			<%= flash[:notice]%>
+		</div>
+	</div>
+<% end %>
+
 <table class="table is-fullwidth is-right">
 	<thead>
 		<tr>

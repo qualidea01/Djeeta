@@ -4,6 +4,12 @@
   </button>
 </div>
 
+  <% if flash[:notice] %>
+		<div class="notification is-primary is-light">
+			<%= flash[:notice] %>
+		</div>
+	<% end %> 
+
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
@@ -26,8 +32,11 @@
     </div>
 
   </div>
+
   <footer class="card-footer">
     <p class="card-footer-item"><%= link_to '編集', edit_board_path(@board) %></p>
     <p class="card-footer-item"><%= link_to "削除", @board, method: :delete %></p>
   </footer>
 </div>
+
+

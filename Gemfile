@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 #Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
  gem 'kaminari'
- gem 'rails-i18n', '~> 5.1'
+ gem 'rails-i18n'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
