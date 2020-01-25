@@ -23,19 +23,18 @@ class BoardsController < ApplicationController
 				error_messages: board.errors.full_messages
 			}
 		end
-		
 	end
 
 	def show
+		#boardテーブルに紐づいてコメントテーブルを生成
+		@comment = @board.comments.new
 	end
 
 	def edit 
-		@board = Board.find(params[:id])
 	end
 
 	def update 
 		@board.update(board_params)
-
 		redirect_to @board
 	end
 

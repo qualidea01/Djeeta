@@ -1,0 +1,29 @@
+<br>
+<h1 class="title is-5" >
+	コメント記入
+</h1>
+<%= form_for comment do |f| %>
+	<%= f.hidden_field :board_id %>
+	<form is-desktop>
+		<div class="field">
+			<label class="label">
+				<%= f.label :name, '名前' %>
+			</label>
+			<div class="control">
+				<%= f.text_field :name, class: 'input', placeholder: '名前を入力してください' %>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">
+				<%= f.label :comment, '本文' %>
+			</label>
+			<div class="control">
+				<%= f.text_area :comment, class: 'textarea is-medium', placeholder: 'コメントを入力してください' %>
+			</div>
+			<br>
+			<div class="buttons has-addons is-center">
+				<%= f.submit '送信', class: "button is-info" %>
+			</div> 
+		</div>
+	</form>
+<% end %>
