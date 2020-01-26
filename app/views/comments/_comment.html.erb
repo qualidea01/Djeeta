@@ -1,0 +1,19 @@
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong><%= comment.name %></strong> <small></small> 
+        <br>
+        <%= simple_format(comment.comment) %>
+				<%= comment.created_at.to_s(:datetime_jp) %>
+        <br>
+       <small>
+        <%= link_to '削除', comment, method: :delete, data: {
+          confirm: '削除してもよろしいですか？' 
+        } %>
+       </small>
+      </p>
+		</div>
+	</div>	
+</article>
+  

@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
       flash[:notice] = 'コメントを投稿しました'
       redirect_to comment.board
     else
-      redirect_to :back, flash: {
+      redirect_back fallback_location: root_path, flash: {
         comment: comment,
         error_messages: comment.errors.full_messages
       }
@@ -14,7 +14,14 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.new(board_id: @board.new)
+  end
+  
   def destroy
+    comment = Comment.find(params[:id])
+    comment.delete
+    redirect_to comment.board, flash: {
+      notice: 'コメントが削除されました'
+    }
   end
 
   private

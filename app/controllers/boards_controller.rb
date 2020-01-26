@@ -27,9 +27,9 @@ class BoardsController < ApplicationController
 
 	def show
 		#boardテーブルに紐づいてコメントテーブルを生成
-		@comment = @board.comments.new
+		@comment = Comment.new(board_id: @board.id)
 	end
-
+	
 	def edit 
 	end
 

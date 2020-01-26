@@ -35,9 +35,12 @@
 
   <footer class="card-footer">
     <p class="card-footer-item"><%= link_to '編集', edit_board_path(@board) %></p>
-    <p class="card-footer-item"><%= link_to "削除", board, method: :delete %></p>
+
   </footer>
 </div>
+<br>
+<div class="title is-5">コメント</div>
+  <%= render @board.comments %>
 
 <%= render partial: 'comment_form', locals: { comment: @comment } %>
 </div>
