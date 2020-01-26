@@ -5,7 +5,15 @@
 		</h1>
 	</div>
 </section>
-
+	<%= form_tag boards_path, method: :get, class: 'boards_searchForm' do %>
+			<%= select_tag :tag_id,
+							options_from_collection_for_select(Tag.all, :id, :name, params[:tad_id]),
+								{
+									prompt: 'タグで絞り込み',
+									class: 'form-control boards_select',
+									onchange: 'submit(this.form);'
+								} %>
+			<% end %>
 <div class="buttons has-addons is-right">
 	<button class="button">
 		<%= link_to '新規作成', new_board_path %>

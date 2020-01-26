@@ -2,8 +2,10 @@ class BoardsController < ApplicationController
 	before_action :set_target_board, only: %i[show edit update destroy]
 
 	def index
+		# tagから紐づいている掲示板を表示
+		@boards = params[:tag_id].present? ?Tag.find(params[:tag_id]).boards : Board.all
 		#掲示板データの取得@boards変数に格納
-		@boards = Board.page(params[:page])
+		@boards = @boards.page(params[:page])
 	end
 	
 	def new
