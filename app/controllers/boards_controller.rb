@@ -39,7 +39,7 @@ class BoardsController < ApplicationController
 	end
 
 	def destroy
-		@board.delete
+		@board.destroy
 		flash[:notice] = "「#{@board.title}」の掲示板を削除されました"
 		redirect_to boards_path
 	end
@@ -47,7 +47,7 @@ class BoardsController < ApplicationController
 
 	#paramsの中のboardテーブルにあるname,title,bodyの値のみを取得するように明示している
 	def board_params
-		params.require(:board).permit(:name, :title, :body)
+		params.require(:board).permit(:name, :title, :body, tag_ids: [])
 	end
 
 	def set_target_board

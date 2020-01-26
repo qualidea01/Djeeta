@@ -25,6 +25,18 @@
 					<%= f.text_area :body, class: 'textarea is-medium', placeholder: '本文を入力してください' %>
 				</div>
 			</div>
+			<br>
+			<span>タグ一覧</span>
+			<br>
+			<%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+				<span>
+					<%= tag.label class: 'tag' do %>
+						<%= tag.check_box class: 'checkbox' %>
+						<%= tag.text %>
+					<% end %>
+				</span>
+			<% end %>
+				</label>
 			<div class="buttons has-addons is-center">
 				<%= f.submit '保存', class: "button is-info" %>
 			</div> 
