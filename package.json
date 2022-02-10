@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "bulma": "^0.8.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "scripts": {
     "css-build": "node-sass --omit-source-map-url app/assets/stylesheets/mystyles.scss app/assets/stylesheets/application.css",
